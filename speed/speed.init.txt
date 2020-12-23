@@ -1,0 +1,34 @@
+###########################################
+db_domain=""
+db_name={{{dbname-here}}}
+ 
+###########################################
+# File Configuration
+###########################################
+
+##Simple## creation BD simple
+db_create_online_log_dest=("C:\app\{{user}}\oradata\{{dbname-here}}\control01.ctl", "C:\app\Spectre\flash_recovery_area\{{dbname-here}}\control02.ctl")
+db_recovery_file_dest=C:\app\{user}}\flash_recovery_area
+db_recovery_file_dest_size=4039114752
+
+##ORM## creation BD avec ORM
+db_create_file_dest="C:\app\{{user}}\oradata\{{{dbname-here}}}"
+db_create_online_log_dest_1="C:\app\{{user}}\oradata\{{{dbname-here}}}"
+
+db_recovery_file_dest=C:\app\{{user}}\flash_recovery_area\{{{dbname-here}}}
+db_recovery_file_dest_size=4039114752
+
+ 
+###########################################
+# Security and Auditing
+###########################################
+audit_file_dest=C:\app\\{user}}\admin\{{{dbname-here}}}\adump
+
+
+
+###########################################
+# System Managed Undo and Rollback Segments
+###########################################
+undo_tablespace=UNDOTBS
+##ORM
+undo_management=AUTO
