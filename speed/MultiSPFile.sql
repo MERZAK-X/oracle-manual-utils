@@ -1,3 +1,4 @@
+-- Made by @MERZAK-X and @Yassine-Ag
 SHOW PARAMETER CONTROL_FILES;
 ACCEPT ctrlFile char prompt '[+] Enter existing source control file (.CTL) path : '
 ACCEPT ctrlFileCopy char prompt '[+] Enter NEW control file (.CTL) path : '
