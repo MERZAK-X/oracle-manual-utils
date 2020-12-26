@@ -1,9 +1,12 @@
-CONN / as sysdba
+-- Made by @MERZAK-X and @Yassine-Ag
+prompt ##################### THIS SCRIPT WAS MADE BY MERZAK-X AND Yassine-Ag #####################
+
+CONN / as SYSDBA
 
 CREATE SPFILE FROM PFILE='&2';
 STARTUP NOMOUNT;
 CREATE DATABASE &1;
-CONN / as sysdba
+CONN / as SYSDBA
 -- TODO: Change this path to your current cersion or smt ... we're to lazy to do it fo you lol
 @'&3\product\11.2.0\dbhome_1\RDBMS\ADMIN\catalog.sql';
 @'&3\product\11.2.0\dbhome_1\RDBMS\ADMIN\catproc.sql';
@@ -26,9 +29,9 @@ create user &username identified by &password;
 select username,account_status from dba_users;
 
 prompt ##################### CONNECTING SYS AS SYSDBA #####################
-CONN sys/&1 as sysdba
+CONN SYS/&1 as SYSDBA
 grant connect, create table to &username;
 
 prompt ##################### CONNECTING AS NEW USER #####################
-connect &username/&password
+CONN &username/&password
 SELECT USER FROM DUAL;
