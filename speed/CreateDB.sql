@@ -12,7 +12,8 @@ CONN / as SYSDBA
 @'&3\product\11.2.0\dbhome_1\RDBMS\ADMIN\catproc.sql';
 ALTER USER SYSTEM IDENTIFIED BY &1; 
 prompt ##################### CONNECTING AS SYSTEM #####################
-CONN system/&1
+ACCEPT dbname char prompt '[+] Enter newly created database name : '
+CONN system/&dbname
 @'&3\product\11.2.0\dbhome_1\sqlplus\admin\pupbld.sql';
 
 prompt ##################### TESTING VARIABLES #####################
@@ -29,7 +30,7 @@ create user &username identified by &password;
 select username,account_status from dba_users;
 
 prompt ##################### CONNECTING SYS AS SYSDBA #####################
-CONN SYS/&1 as SYSDBA
+CONN SYS/&dbname as SYSDBA
 grant connect, create table to &username;
 
 prompt ##################### CONNECTING AS NEW USER #####################
