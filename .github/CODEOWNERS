@@ -2,5 +2,4 @@
 # the repo. Unless a later match takes precedence,
 # @MERZAK-X will be requested for
 # review when someone opens a pull request.
-*               @MERZAK-X
-*/speed/*.bat   @Yassine-Ag
+*  @MERZAK-X
