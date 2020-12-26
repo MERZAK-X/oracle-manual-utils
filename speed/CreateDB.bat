@@ -1,3 +1,5 @@
+:: Made by @MERZAK-X and @Yassine-Ag
+
 @echo off
 cls
 echo.
@@ -41,7 +43,7 @@ oradim -new -sid %DB_Name% -syspwd %DB_Name% -startmode a -srvcstart s -spfile
 
 set ORACLE_SID=%DB_Name%
 
-sqlplus -S /nolog @"%oracle_base%\speed\creationDB.sql" %DB_Name% %pfile% %oracle_base%
+sqlplus -S /nolog @"%oracle_base%\speed\CreateDB.sql" %DB_Name% %pfile% %oracle_base%
 
 
 
